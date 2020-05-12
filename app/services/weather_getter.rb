@@ -3,7 +3,7 @@ class WeatherGetter
   def self.get_current_weather_by_location(location)
     location = Geocoder.search(location)
     coordinates = location.first.coordinates
-    
+
     make_request("#{coordinates[0]},#{coordinates[1]}")
   end
 
@@ -12,10 +12,9 @@ class WeatherGetter
   end
 
   private
-  API_KEY = "6153a1bf5f8787976c8b46f8120f77fb"
 
   def self.make_request(args)
-    url = "https://api.darksky.net/forecast/#{API_KEY}/#{args}"
+    url = "https://api.darksky.net/forecast/#{ENV['API_KEY']}/#{args}"
     response = Excon.get(url)
     JSON.parse(response.body)
   end
