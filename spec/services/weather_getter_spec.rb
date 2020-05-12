@@ -5,7 +5,7 @@ RSpec.describe WeatherGetter do
 
     let(:lat)       { 40.014984 }
     let(:long)      { -105.270546 }
-    let(:location)  { "Boulder" }
+    let(:location)  { "Boulder, CO" }
 
     it "returns weather day given lat and long" do
       response = WeatherGetter.get_current_weather_by_lat_long(lat, long)
