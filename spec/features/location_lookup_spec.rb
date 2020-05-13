@@ -1,12 +1,16 @@
 require 'rails_helper'
 
-describe "User can see a location search form" do
+describe "Location search" do
 
   before { visit root_path }
 
-  it "allows a user to fill in their location" do
+  it "allows a user to look up their location and redirect to root" do
     fill_in 'location', with: "Boulder, CO\n"
 
     expect(current_path).to eq '/'
+  end
+
+  it "returns weather data for the location" do
+    
   end
 end
