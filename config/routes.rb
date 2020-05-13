@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
   root "weather#index"
-  post "/weather", to: "weather#show"
+  get :search, controller: 'weather'
+  resources :weather, only: :show
 end
