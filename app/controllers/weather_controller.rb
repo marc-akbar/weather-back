@@ -5,7 +5,7 @@ class WeatherController < ApplicationController
 
   def search
     result = WeatherGetter.get_current_weather_by_location(search_params[:location])
-    redirect_to root_path
+    scene = result['currently']['icon']
   end
 
   private

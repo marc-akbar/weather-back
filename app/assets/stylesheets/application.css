@@ -13,3 +13,43 @@
  *= require_tree .
  *= require_self
  */
+
+.clear-day {
+  content: 'Clear day'
+}
+
+.clear-night {
+  content: 'Clear night'
+}
+
+.rain {
+  content: 'Rain'
+}
+
+.snow {
+  content: 'Snow'
+}
+
+.sleet {
+  content: 'Sleet'
+}
+
+.wind {
+  content: 'Windy'
+}
+
+.fog {
+  content: 'Fog'
+}
+
+.cloudy {
+  content: 'Cloudy'
+}
+
+.partly-cloudy-day {
+  content: 'Partly cloudy day'
+}
+
+.partly-cloudy-night {
+  content: 'Partly cloudy night'
+}

@@ -11,6 +11,9 @@ describe "Location search" do
   end
 
   it "returns weather data for the location" do
+    fill_in 'location', with: "Boulder, CO\n"
     
+    expect(page).to have_content "Current Temperature"
+    expect(page).to have_content "Boulder"
   end
 end

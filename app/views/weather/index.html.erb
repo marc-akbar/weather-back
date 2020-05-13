@@ -1,5 +1,5 @@
 <h1>Where are you?</h1>
 
-<%= form_with url: search_path, method: :get, local: true do |f| %>
+<%= form_with url: search_path, method: :get, class: 'location-search' do |f| %>
   <%= f.text_field :location, placeholder: "Enter City" %>
 <% end %>
