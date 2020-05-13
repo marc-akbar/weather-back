@@ -4,7 +4,9 @@ class WeatherController < ApplicationController
   end
 
   def search
-
+    result = WeatherGetter.get_current_weather_by_location(search_params[:location])
+    # Change to show path
+    redirect_to index_path
   end
 
   def show
@@ -12,7 +14,7 @@ class WeatherController < ApplicationController
 
   private
 
-  def lookup_params
+  def search_params
     params.permit(:location)
   end
 end
