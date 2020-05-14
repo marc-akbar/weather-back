@@ -18,7 +18,6 @@ module Weather
     ATTRIBUTES =
       [
         "summary",
-        "icon",
         "precipProbability",
         "temperature",
         "dewPoint",

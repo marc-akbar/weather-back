@@ -10,7 +10,7 @@ class WeatherController < ApplicationController
       flash.notice = "Location not found"
       redirect_to root_path
     else
-      scene = @weather_data['currently']['icon']
+      @scene = @weather_data['currently']['icon']
 
       @location = get_location(params[:location])
       @current_conditions = Weather::DataCleaner.parse_attributes(@weather_data['currently'])

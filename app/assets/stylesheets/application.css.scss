@@ -13,25 +13,26 @@
 //= require_tree .
 //= require_self
 
-.search-btn { display: none; }
+body {
+  overflow-x: hidden;
+  overflow-y: hidden;
+}
+
+@keyframes slideImage {
+  from  { left: 0; }
+  to    { left: 100%; transform: translateX(-100%); }
+}
 
 .photo {
   position: absolute;
   top: 0;
-  right: 0;
   height: 100%;
   z-index: -1;
 
-  transition: all 10s ease-in-out;
-  -webkit-transition: all 10s ease-in-out; /** Chrome & Safari **/
-  -moz-transition: all 10s ease-in-out; /** Firefox **/
-  -o-transition: all 10s ease-in-out; /** Opera **/
-
-  transform: translate(350px,0);
-  -webkit-transform: translate(350px,0); /** Chrome & Safari **/
-  -o-transform: translate(350px,0); /** Opera **/
-  -moz-transform: translate(350px,0); /** Firefox **/
+  animation: 50s ease-in-out infinite alternate slideImage;
 }
+
+.search-btn { display: none; }
 
 .clear-day {
   content: url('trevor-vannoy_Dunas-De-Concon-Chile.jpg');
