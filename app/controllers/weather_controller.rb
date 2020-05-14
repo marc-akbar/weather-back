@@ -4,15 +4,16 @@ class WeatherController < ApplicationController
   end
 
   def search
-    @location = get_location(params[:location])
     @weather_data = Weather::DataGather.get_current_weather_by_location(search_params[:location])
 
-    if @weather_data != nil
-      scene = @weather_data['currently']['icon']
-      @current_conditions = Weather::DataCleaner.parse_attributes(@weather_data['currently'])
-    else
+    if @weather_data == nil
       flash.notice = "Location not found"
       redirect_to root_path
+    else
+      scene = @weather_data['currently']['icon']
+
+      @location = get_location(params[:location])
+      @current_conditions = Weather::DataCleaner.parse_attributes(@weather_data['currently'])
     end
 
   end
