@@ -15,41 +15,41 @@
  */
 
 .clear-day {
-  content: 'Clear day'
+  content: 'Clear day';
 }
 
 .clear-night {
-  content: 'Clear night'
+  content: 'Clear night';
 }
 
 .rain {
-  content: 'Rain'
+  content: 'Rain';
 }
 
 .snow {
-  content: 'Snow'
+  content: 'Snow';
 }
 
 .sleet {
-  content: 'Sleet'
+  content: 'Sleet';
 }
 
 .wind {
-  content: 'Windy'
+  content: 'Windy';
 }
 
 .fog {
-  content: 'Fog'
+  content: 'Fog';
 }
 
 .cloudy {
-  content: 'Cloudy'
+  content: 'Cloudy';
 }
 
 .partly-cloudy-day {
-  content: 'Partly cloudy day'
+  content: 'Partly cloudy day';
 }
 
 .partly-cloudy-night {
-  content: 'Partly cloudy night'
+  content: 'Partly cloudy night';
 }
