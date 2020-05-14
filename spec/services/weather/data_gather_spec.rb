@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-RSpec.describe ParseWeather do
+RSpec.describe Weather::DataCleaner do
   context "Prepare weather data" do
 
     let(:response) {
@@ -29,7 +29,7 @@ RSpec.describe ParseWeather do
 
     describe ".parse_attributes" do
       it "should keep only the designated attributes from the hash" do
-        result = ParseWeather.parse_attributes(response)
+        result = Weather::DataCleaner.parse_attributes(response)
 
         expect(result).to include 'summary'
         expect(result).to include 'temperature'
@@ -40,5 +40,7 @@ RSpec.describe ParseWeather do
         expect(result).to_not include 'ozone'
       end
     end
+
+    describe ".find_"
   end
 end
