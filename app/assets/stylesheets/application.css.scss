@@ -16,11 +16,13 @@
 .search-btn { display: none; }
 
 .clear-day {
-  content: 'Clear day';
+  content: url('trevor-vannoy_Dunas-De-Concon-Chile.jpg');
+  // position: absolute;
+
 }
 
 .clear-night {
-  content: 'Clear night';
+  content: url('martin-brechtl_Salgótarján-Hungary.jpg');
 }
 
 .rain {
@@ -40,7 +42,7 @@
 }
 
 .fog {
-  content: 'Fog';
+  content: url('daniel-gregoire_Mauna-Kea-Hawaii.jpg');
 }
 
 .cloudy {
@@ -48,7 +50,7 @@
 }
 
 .partly-cloudy-day {
-  content: 'Partly cloudy day';
+  content: url('raphael-andres_Rattray-Head-Lighthouse-UK.jpg');
 }
 
 .partly-cloudy-night {
