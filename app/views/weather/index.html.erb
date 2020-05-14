@@ -2,4 +2,5 @@
 
 <%= form_with url: search_path, method: :get, local: true, class: 'location-search' do |f| %>
   <%= f.text_field :location, placeholder: "Enter City" %>
+  <div class='search-btn'><%= f.submit 'Search' %><div>
 <% end %>

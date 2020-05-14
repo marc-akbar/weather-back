@@ -1,8 +1,8 @@
 <div><%= link_to "Home", root_path %></div>
 
 <div><%= @location.capitalize %></div>
-<div><%= @result['timezone'] %></div>
-<div>Last Updated: <%= Time.at(@current_conditions['time']).strftime("%I:%M %p") %></div>
+<div><%= @weather_data['timezone'] %></div>
+<div>Last Updated: <%= Time.at(@weather_data['currently']['time']).strftime("%I:%M %p") %></div>
 
 <% @current_conditions.map do |attr, val| %>
   <ul>

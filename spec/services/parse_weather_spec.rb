@@ -31,10 +31,10 @@ RSpec.describe ParseWeather do
       it "should keep only the designated attributes from the hash" do
         result = ParseWeather.parse_attributes(response)
 
-        expect(result).to include 'time'
         expect(result).to include 'summary'
-        expect(result).to include 'icon'
         expect(result).to include 'temperature'
+        expect(result).to include 'humidity'
+        expect(result).to include 'uvIndex'
 
         expect(result).to_not include 'precipIntensity'
         expect(result).to_not include 'ozone'

@@ -16,7 +16,6 @@ class ParseWeather
 
   ATTRIBUTES =
     [
-      "time",
       "summary",
       "icon",
       "precipProbability",
