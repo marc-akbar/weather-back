@@ -27,6 +27,7 @@ body {
   position: absolute;
   top: 0;
   height: 100%;
+  min-width: 100%;
   z-index: -1;
 
   animation: 50s ease-in-out infinite alternate slideImage;
@@ -34,42 +35,49 @@ body {
 
 .search-btn { display: none; }
 
+.home-image {
+  content: url("mathew-schwartz_Brooklyn-Bridge,NY.jpg");
+}
+
 .clear-day {
-  content: url('trevor-vannoy_Dunas-De-Concon-Chile.jpg');
+  content: url("mathew-schwartz_Brooklyn-Bridge,NY.jpg");
 }
 
 .clear-night {
-  content: url('martin-brechtl_Salgótarján-Hungary.jpg');
+  content: url("manouchehr-hejazi_Semnan-Province,Iran.jpg");
 }
 
 .rain {
-  content: 'Rain';
+  content: url("anton-scherbakov_Moscow,Russia.jpg");
+  filter: brightness(0.9) contrast(1.1);
 }
 
 .snow {
-  content: 'Snow';
+  content: url("jaanus-jagomagi_Väike-Rannavärav,Estonia.jpg");
 }
 
 .sleet {
-  content: 'Sleet';
+  content: url("sleet-image.jpg");
 }
 
 .wind {
-  content: 'Windy';
+  content: url("allen-lee.jpg");
+  filter: brightness(0.7) contrast(1.05);
 }
 
 .fog {
-  content: url('daniel-gregoire_Mauna-Kea-Hawaii.jpg');
+  content: url('daniel-gregoire_Mauna-Kea,Hawaii.jpg');
 }
 
 .cloudy {
-  content: 'Cloudy';
+  content: url("toimetaja-tolkeburoo_Pirita,Estonia.jpg");
 }
 
 .partly-cloudy-day {
-  content: url('raphael-andres_Rattray-Head-Lighthouse-UK.jpg');
+  content: url('raphael-andres_Rattray-Head-Lighthouse,UK.jpg');
 }
 
 .partly-cloudy-night {
-  content: 'Partly cloudy night';
+  content: url('raphael-andres_Rattray-Head-Lighthouse,UK.jpg');
+  filter: brightness(0.45) contrast(1.15);
 }
