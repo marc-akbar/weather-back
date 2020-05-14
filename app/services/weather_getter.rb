@@ -2,7 +2,12 @@ class WeatherGetter
 
   def self.get_current_weather_by_location(location)
     location = Geocoder.search(location)
-    coordinates = location.first.coordinates
+
+    if location.present?
+      coordinates = location.first.coordinates
+    else
+      return nil
+    end
 
     make_request("#{coordinates[0]},#{coordinates[1]}")
   end
