@@ -4,7 +4,7 @@ class WeatherController < ApplicationController
   end
 
   def search
-    @location = params[:location]
+    @location = get_location(params[:location])
     @weather_data = Weather::DataGather.get_current_weather_by_location(search_params[:location])
 
     if @weather_data != nil
@@ -21,5 +21,16 @@ class WeatherController < ApplicationController
 
   def search_params
     params.permit(:location)
+  end
+
+  def get_location(input)
+    arr = []
+
+    base = Geocoder.search(input).first
+    arr << base.city if base.city.present?
+    arr << base.state if base.state.present?
+    arr << base.country if base.country.present?
+
+    arr.join(', ')
   end
 end
