@@ -1,8 +1,9 @@
-<h1>Where are you?</h1>
+<div class="full-page home-background"></div>
 
-<%= form_with url: search_path, method: :get, local: true, class: 'location-search' do |f| %>
-  <%= f.text_field :location, placeholder: "Enter City" %>
-  <div class='search-btn'><%= f.submit 'Search' %></div>
-<% end %>
-
-<div class="photo home-image"></div>
+<div class="center-text">
+  <h1 class='search-title'>Where are you?</h1>
+  <%= form_with url: search_path, method: :get, local: true, class: 'search-field' do |f| %>
+    <%= f.text_field :location %>
+    <div class='search-btn'><%= f.submit 'Search' %></div>
+  <% end %>
+</div>

@@ -23,21 +23,49 @@ body {
   to    { left: 100%; transform: translateX(-100%); }
 }
 
-.photo {
+.full-page {
   position: absolute;
   top: 0;
   height: 100%;
   min-width: 100%;
   z-index: -1;
 
-  animation: 50s ease-in-out infinite alternate slideImage;
+  animation: 100s linear infinite alternate slideImage;
+}
+
+.home-background {
+  background-image: url('sara-the-freak_Cancun,Mexico.jpg');
+  background-size: cover;
+  filter: brightness(.5) contrast(1.05);
+}
+
+.search-title {
+  font-family: 'Work Sans', sans-serif;
+  font-weight: 500px;
+  text-align: center;
+}
+
+.search-field > input {
+  text-align: center;
+  height: 50px;
+  width: 400px;
+  border: none;
+  border-radius: 25px;
+  box-shadow:
+    inset 0 -3em 3em rgba(0,0,0,0.1),
+          0 0  0 2px rgb(255,255,255),
+          0.3em 0.3em 1em rgba(0,0,0,0.3);
+}
+
+.center-text {
+  position: absolute;
+  top: 40%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: white;
 }
 
 .search-btn { display: none; }
-
-.home-image {
-  content: url("mathew-schwartz_Brooklyn-Bridge,NY.jpg");
-}
 
 .clear-day {
   content: url("mathew-schwartz_Brooklyn-Bridge,NY.jpg");
