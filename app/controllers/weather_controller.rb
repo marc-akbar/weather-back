@@ -11,11 +11,11 @@ class WeatherController < ApplicationController
       redirect_to root_path
     else
       @scene = @weather_data['currently']['icon']
+      @photographer = PhotoCredit.find_photographers_by_scene(@scene)
 
       @location = get_location(params[:location])
       @current_conditions = Weather::DataCleaner.parse_attributes(@weather_data['currently'])
     end
-
   end
 
   private

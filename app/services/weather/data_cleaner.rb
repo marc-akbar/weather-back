@@ -15,17 +15,16 @@ module Weather
       'partly-cloudy-night'
     ]
 
-    ATTRIBUTES =
-      [
-        "summary",
-        "precipProbability",
-        "temperature",
-        "dewPoint",
-        "humidity",
-        "pressure",
-        "windSpeed",
-        "uvIndex"
-      ]
+    ATTRIBUTES =[
+      "summary",
+      "precipProbability",
+      "temperature",
+      "dewPoint",
+      "humidity",
+      "pressure",
+      "windSpeed",
+      "uvIndex"
+    ]
 
     def self.parse_attributes(hash)
       hash.slice(*ATTRIBUTES)
