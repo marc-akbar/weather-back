@@ -1,25 +1,22 @@
 <div class="full-page <%= @scene %>"></div>
+<div class="dark-sidebar"></div>
 
-<div><%= link_to "Home", root_path %></div>
-
-<div class="">
+<div class="home-btn"><%= link_to "Home", root_path %></div>
 
 <div class="info-box">
-  <div class="info-title">
-    <h3><%= @location %></h3>
-  </div>
+  <h3 class="info-title"><%= @location %></h3>
   <div class="info-time">
-    <div>Last Updated: <%= Time.at(@weather_data['currently']['time']).strftime("%I:%M %p") %></div>
+    Last Updated: <%= Time.at(@weather_data['currently']['time']).strftime("%I:%M %p") %>
   </div>
   <div class="info-weather-data">
     <% @current_conditions.map do |attr, val| %>
       <ul>
-        <li><%= attr %>: <%= val %></li>
+        <li><%= attr.underscore.titleize %>: <%= val %></li>
       </ul>
     <% end %>
   </div>
+</div>
 
-  <div class="photo-cred">
-    Photo by <%= link_to @photographer[0], @photographer[1], target: '_blank'%>
-  </div>
+<div class="photo-cred">
+  Photo by <%= link_to @photographer[0], @photographer[1], target: '_blank'%>
 </div>

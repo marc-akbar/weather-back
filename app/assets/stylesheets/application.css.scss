@@ -13,6 +13,8 @@
 //= require_tree .
 //= require_self
 
+$scene-text-color: rgb(255,255,255);
+
 body {
   overflow-x: hidden;
   overflow-y: hidden;
@@ -34,6 +36,14 @@ body {
   animation: 100s linear infinite alternate slideImage;
 }
 
+.center-text {
+  position: absolute;
+  top: 40%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: white;
+}
+
 .home-background {
   background-image: url('sara-the-freak_Cancun,Mexico.jpg');
   background-size: cover;
@@ -53,32 +63,89 @@ body {
   border: none;
   border-radius: 25px;
   box-shadow:
-    inset 0 -3em 3em rgba(0,0,0,0.1),
+    inset 0 -3rem 3rem rgba(0,0,0,0.1),
           0 0  0 2px rgb(255,255,255),
-          0.3em 0.3em 1em rgba(0,0,0,0.3);
+          0.3rem 0.3rem 1rem rgba(0,0,0,0.3);
 
   &::placeholder { opacity: .3; }
 }
 
-.center-text {
+.dark-sidebar {
   position: absolute;
-  top: 40%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  color: white;
+  top: 0;
+  left: 0;
+  width: 350px;
+  height: 100%;
+  background-color: black;
+  opacity: 0.45;
+}
+
+.flash {
+  padding: 1.5rem;
+  text-align: center;
+  font-size: 1.15rem;
+  opacity: 0.7;
 }
 
 .search-btn { display: none; }
+.home-btn {
+  position: absolute;
+  top: 0;
+  left: 0;
+  padding: 1.5rem 2rem;
+  font-size: 1.25rem;
+  font-weight: 600;
+  opacity: 0.7;
+
+  & a {
+    color: $scene-text-color;
+    text-decoration: none;
+  }
+}
 
 .info-box {
   position: absolute;
+  max-width: 286px; // 350px of dark-sidebar minus padding and margins
+  left: 0;
+  top: 45%;
+  transform: translate(0, -50%);
+  padding: 2rem;
+  color: $scene-text-color;
+
+  & .info-title {
+    margin-bottom: 0.5rem;
+    opacity: .8;
+  }
+
+  & .info-time {
+    margin-bottom: 1.5rem;
+    opacity: .9;
+  }
+
+  & .info-weather-data {
+    & ul {
+      opacity: .9;
+      font-size: 1.1rem;
+      list-style: none;
+      padding-left: 1rem;
+    }
+  }
+}
+
+.photo-cred {
+  position: absolute;
+  max-width: 286px; // 350px of dark-sidebar minus padding and margins
   bottom: 0;
   left: 0;
-  padding: 1em;
-  background-color:
+  padding: 2rem;
+  color: $scene-text-color;
+  opacity: .6;
 
-  & .info-title { color: rgb(0,0,0,0.5); }
-
+  & a {
+    text-decoration: none;
+    color: $scene-text-color;
+    opacity: .6
+  }
 }
 
 .clear-day {
