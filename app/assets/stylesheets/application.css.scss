@@ -70,6 +70,14 @@ body {
   &::placeholder { opacity: .3; }
 }
 
+.logo {
+  position: absolute;
+  bottom: 3%;
+  left: 50%;
+  transform: translate(-50%, 0);
+  height: 50px;
+}
+
 .dark-sidebar {
   position: absolute;
   top: 0;
