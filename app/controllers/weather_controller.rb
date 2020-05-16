@@ -10,11 +10,7 @@ class WeatherController < ApplicationController
       flash.notice = "Location not found"
       redirect_to root_path
     else
-      @scene = @weather_data['currently']['icon']
-      @photographer = PhotoCredit.find_photographers_by_scene(@scene)
-
-      @location = get_location(params[:location])
-      @current_conditions = Weather::DataCleaner.parse_attributes(@weather_data['currently'])
+      assign_variables(@weather_data)
     end
   end
 
@@ -22,6 +18,13 @@ class WeatherController < ApplicationController
 
   def search_params
     params.permit(:location)
+  end
+
+  def assign_variables(weather_data)
+    @location = get_location(params[:location])
+    @scene = weather_data['currently']['icon']
+    @photographer = PhotoCredit.find_photographers_by_scene(@scene)
+    @current_conditions = Weather::DataCleaner.parse_attributes(weather_data['currently'])
   end
 
   def get_location(input)

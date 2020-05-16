@@ -5,8 +5,8 @@
 
 <div class="info-box">
   <h3 class="info-title"><%= @location %></h3>
-  <div class="info-time">
-    Last Updated: <%= Time.at(@weather_data['currently']['time']).strftime("%I:%M %p") %>
+  <div class="info-summary">
+    <%= @weather_data['hourly']['summary'] %>
   </div>
   <div class="info-weather-data">
     <% @current_conditions.map do |attr, val| %>
@@ -17,6 +17,11 @@
   </div>
 </div>
 
-<div class="photo-cred">
-  Photo by <%= link_to @photographer[0], @photographer[1], target: '_blank'%>
-</div>
+<footer>
+  <div class="update-time">
+    Last Updated: <%= Time.at(@weather_data['currently']['time']).strftime("%I:%M %p") %>
+  </div>
+  <div class="photo-cred">
+    Photo by <%= link_to @photographer[0], @photographer[1], target: '_blank'%>
+  </div>
+</footer>

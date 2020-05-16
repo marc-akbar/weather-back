@@ -121,13 +121,15 @@ body {
   color: $scene-text-color;
 
   & .info-title {
+    font-size: 1.25rem;
     margin-bottom: 0.5rem;
     opacity: .8;
   }
 
-  & .info-time {
-    margin-bottom: 1.5rem;
+  & .info-summary {
+    font-size: 1.1rem;
     opacity: .9;
+    padding-bottom: 1.5rem;
   }
 
   & .info-weather-data {
@@ -140,19 +142,25 @@ body {
   }
 }
 
-.photo-cred {
+footer {
   position: absolute;
-  max-width: 286px; // 350px of dark-sidebar minus padding and margins
+  max-width: 350px;
   bottom: 0;
   left: 0;
   padding: 2rem;
   color: $scene-text-color;
   opacity: .6;
 
-  & a {
-    text-decoration: none;
-    color: $scene-text-color;
-    opacity: .6
+  & .update-time {
+    padding-bottom: .5rem;
+  }
+
+  & .photo-cred {
+    & a {
+      text-decoration: none;
+      color: $scene-text-color;
+      opacity: .6
+    }
   }
 }
 
