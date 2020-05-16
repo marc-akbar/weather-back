@@ -1,10 +1,12 @@
+default: &default
+adapter: redis
+url: <%= ENV.fetch("REDIS_URL") %>
+
 development:
-  adapter: async
+  <<: *default
 
 test:
-  adapter: test
+  <<: *default
 
 production:
-  adapter: redis
-  url: <%= ENV.fetch("REDIS_URL") { "redis://localhost:6379/1" } %>
-  channel_prefix: weather_back_production
+  <<: *default

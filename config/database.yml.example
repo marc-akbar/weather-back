@@ -1,0 +1,21 @@
+default: &default
+  adapter: postgresql
+  encoding: unicode
+  pool: 5
+  username: USERNAME
+  password: PASSWORD
+  timeout: 5000
+
+development:
+  <<: *default
+  database: weather_back_development
+
+test:
+  <<: *default
+  database: weather_back_test
+
+production:
+  <<: *default
+  database: weather_back_production
+  username: weather_back
+  password: <%= ENV['WEATHER_BACK_DATABASE_PASSWORD'] %>

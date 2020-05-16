@@ -12,6 +12,8 @@ class WeatherController < ApplicationController
     else
       assign_variables(@weather_data)
     end
+
+    UpdateWeatherJob.set(wait: 600.seconds).perform_later(@location)
   end
 
   private
@@ -24,7 +26,7 @@ class WeatherController < ApplicationController
     @location = get_location(params[:location])
     @scene = weather_data['currently']['icon']
     @photographer = PhotoCredit.find_photographers_by_scene(@scene)
-    
+
     raw_conditions = Weather::Cleaner.parse_attributes(weather_data['currently'])
     @current_conditions = Weather::Cleaner.add_suffixes(raw_conditions)
   end

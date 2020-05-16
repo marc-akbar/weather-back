@@ -9,18 +9,16 @@
     <%= @weather_data['hourly']['summary'] %>
   </div>
   <div class="info-weather-data">
-    <% @current_conditions.map do |attr, val| %>
-      <ul>
-        <li><%= attr.underscore.titleize %>: <%= val %></li>
-      </ul>
-    <% end %>
+    <ul>
+      <% @current_conditions.map do |attr, val| %>
+        <li class="<%= attr %>"><%= attr.underscore.titleize %>: <span class="<%= attr %>-value"><%= val.keys[0] %></span><%= val.values[0] %></li>
+      <% end %>
+    </ul>
   </div>
 </div>
 
 <footer>
-  <div class="update-time">
-    Last Updated: <%= Time.at(@weather_data['currently']['time']).strftime("%l:%M %P") %>
-  </div>
+  <div class="update-time">Last Updated: <span class="update-time-value"><%= Time.at(@weather_data['currently']['time']).strftime("%l:%M %P") %></span></div>
   <div class="photo-cred">
     Photo by <%= link_to @photographer[0], @photographer[1], target: '_blank'%>
   </div>

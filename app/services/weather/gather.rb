@@ -13,10 +13,6 @@ module Weather
       make_request("#{coordinates[0]},#{coordinates[1]}")
     end
 
-    def self.get_current_weather_by_lat_long(lat, long)
-      make_request("#{lat},#{long}")
-    end
-
     private
 
     def self.make_request(args)

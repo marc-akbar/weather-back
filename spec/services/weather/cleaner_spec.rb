@@ -46,8 +46,8 @@ RSpec.describe Weather::Cleaner do
         raw_attributes = Weather::Cleaner.parse_attributes(response)
         result = Weather::Cleaner.add_suffixes(raw_attributes)
 
-        expect(result).to include "temperature" => "74.77°"
-        expect(result).to include "humidity" => "15%"
+        expect(result).to include "temperature" => { 74.77 => "°" }
+        expect(result).to include "humidity" => { 15 => "%" }
       end
     end
   end
