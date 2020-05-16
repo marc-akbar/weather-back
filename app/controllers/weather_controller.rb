@@ -4,7 +4,7 @@ class WeatherController < ApplicationController
   end
 
   def search
-    @weather_data = Weather::DataGather.get_current_weather_by_location(search_params[:location])
+    @weather_data = Weather::Gather.get_current_weather_by_location(search_params[:location])
 
     if @weather_data == nil
       flash.notice = "Location not found"
@@ -24,7 +24,9 @@ class WeatherController < ApplicationController
     @location = get_location(params[:location])
     @scene = weather_data['currently']['icon']
     @photographer = PhotoCredit.find_photographers_by_scene(@scene)
-    @current_conditions = Weather::DataCleaner.parse_attributes(weather_data['currently'])
+    
+    raw_conditions = Weather::Cleaner.parse_attributes(weather_data['currently'])
+    @current_conditions = Weather::Cleaner.add_suffixes(raw_conditions)
   end
 
   def get_location(input)

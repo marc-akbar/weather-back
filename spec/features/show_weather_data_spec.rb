@@ -9,7 +9,6 @@ describe "Show weather data and image after lookup" do
 
    it "should show weather data for the location" do
      expect(page).to have_content 'Paris, Ile-de-France, France'
-     expect(page).to have_content "Summary"
      expect(page).to have_content "Temperature"
      expect(page).to have_content "Dew Point"
      expect(page).to have_content "Pressure"

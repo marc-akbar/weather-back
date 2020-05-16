@@ -122,8 +122,8 @@ body {
 
   & .info-title {
     font-size: 1.25rem;
-    margin-bottom: 0.5rem;
-    opacity: .8;
+    margin-bottom: 1rem;
+    opacity: .9;
   }
 
   & .info-summary {
@@ -159,7 +159,7 @@ footer {
     & a {
       text-decoration: none;
       color: $scene-text-color;
-      opacity: .6
+      opacity: .9;
     }
   }
 }

@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-RSpec.describe Weather::DataCleaner do
+RSpec.describe Weather::Cleaner do
   context "Prepare weather data" do
 
     let(:response) {
@@ -27,11 +27,11 @@ RSpec.describe Weather::DataCleaner do
       }
     }
 
+
     describe ".parse_attributes" do
       it "should keep only the designated attributes from the hash" do
-        result = Weather::DataCleaner.parse_attributes(response)
+        result = Weather::Cleaner.parse_attributes(response)
 
-        expect(result).to include 'summary'
         expect(result).to include 'temperature'
         expect(result).to include 'humidity'
         expect(result).to include 'uvIndex'
@@ -41,6 +41,14 @@ RSpec.describe Weather::DataCleaner do
       end
     end
 
-    describe ".find_"
+    describe ".add_suffixes" do
+      it "should add the appropriate suffixes to the values" do
+        raw_attributes = Weather::Cleaner.parse_attributes(response)
+        result = Weather::Cleaner.add_suffixes(raw_attributes)
+
+        expect(result).to include "temperature" => "74.77°"
+        expect(result).to include "humidity" => "15%"
+      end
+    end
   end
 end

@@ -19,7 +19,7 @@
 
 <footer>
   <div class="update-time">
-    Last Updated: <%= Time.at(@weather_data['currently']['time']).strftime("%I:%M %p") %>
+    Last Updated: <%= Time.at(@weather_data['currently']['time']).strftime("%l:%M %P") %>
   </div>
   <div class="photo-cred">
     Photo by <%= link_to @photographer[0], @photographer[1], target: '_blank'%>

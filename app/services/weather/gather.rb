@@ -1,5 +1,5 @@
 module Weather
-  class DataGather
+  class Gather
 
     def self.get_current_weather_by_location(location)
       location = Geocoder.search(location)
