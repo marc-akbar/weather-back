@@ -11,10 +11,13 @@ consumer.subscriptions.create("WeatherChannel", {
     var updated_data = data.weather_data;
     var unixTime = updated_data['currently']['time'];
     var date = new Date(unixTime * 1000);
-    var current_scene = $('.scene')[0].classList[2]
+    var current_scene = $('.scene')[0].classList[2];
+    var updated_scene = updated_data['currently']['icon'];
 
-    $('.scene')[0].classList.add(updated_data['currently']['icon']);
-    $('.scene')[0].classList.remove(current_scene);
+    if (current_scene !== updated_scene) {
+      $('.scene')[0].classList.add(updated_data['currently']['icon']);
+      $('.scene')[0].classList.remove(current_scene);
+    }
     $('.info-summary')[0].innerHTML = updated_data['hourly']['summary'];
     $('.update-time-value')[0].innerHTML = formatAMPM(date);
 
