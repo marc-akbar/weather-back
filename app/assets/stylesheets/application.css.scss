@@ -32,9 +32,9 @@ body {
   height: 100%;
   min-width: 100%;
   z-index: -1;
-
-  animation: 100s linear infinite alternate slideImage;
 }
+
+.scene { animation: 100s linear infinite alternate slideImage; }
 
 .center-text {
   position: absolute;
@@ -48,6 +48,7 @@ body {
   background-image: url('sara-the-freak_Cancun,Mexico.jpg');
   background-size: cover;
   filter: brightness(.5) contrast(1.05);
+  left: 0;
 }
 
 .search-title {
